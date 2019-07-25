@@ -1,0 +1,611 @@
+/* IMS v2 styles */
+
+/* FONTS */
+@import "./fonts.css";
+
+body{
+    font-family: 'MyriadPro-Regular';
+    background: #fafafa;    
+}
+body.details{height: 100%;}
+
+/* background for index only */
+body:not(.details){
+    background-image: url('../img/hexbkgrnd.png');
+    min-height: 600px;
+    /* Set background image to fixed (don't scroll along with the page) */
+    background-attachment: fixed;
+    /* Center the background image */
+    background-position: top;
+    /* Set the background image to no repeat */
+    background-repeat: no-repeat;
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+}
+
+
+
+.mainContainer{
+    background-image: url('../img/ims-logo.png');
+    background-repeat: no-repeat;
+    background-position: bottom right 20px;
+}
+
+/* ----- Top container of icons ---- */
+
+.topContainer{  
+    height: 284px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: auto;
+}
+.topContainer img, .midContainer img, .bottomContainer img{
+    width: 100%;
+}
+
+.topContainer ul li, .midContainer ul li, .bottomContainer ul li{width: 270px;height:273px;}
+
+ul.topRow{
+    /* border: 1px solid green; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 74px;
+}
+ul.topRow ul{
+    margin-top: -84px;
+}
+ul.topRow li{
+     display: inline-block;
+     /* border: 1px solid blue; */
+     margin: 0 3px;
+     cursor: pointer;
+    }
+/* ----- Middle container of icons ----- */
+.midContainer{
+    height: 275px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around
+}
+
+ul.midRow{
+    display: flex;
+    padding:0;
+    list-style: none;
+}
+ul.midRow li{
+    /* border: 1px solid blue; */
+    margin: -27px 75px;
+    cursor: pointer;
+}
+
+/* ----- infoWindow --------- */
+.midRow li.infoWindow{
+    /* visibility: hidden; */
+    border: 6px solid #cd153e;
+    height: 300px;
+    width: 400px;
+    margin: -35px;
+    background-color: #fff;
+    cursor: auto;
+    -webkit-box-shadow: 5px 6px 13px -6px rgba(0,0,0,1);
+-moz-box-shadow: 5px 6px 13px -6px rgba(0,0,0,1);
+box-shadow: 5px 6px 13px -6px rgba(0,0,0,1);
+}
+.midRow li.infoWindow section{
+    font-family: "MyriadPro-Regular";
+    padding: 10px;
+    font-size: 18px;
+    color: #333333bf;
+    line-height: 1.3;
+}
+
+
+.infoWindow header{    
+    background-color: #fff;  
+}
+
+div#headerTitle{
+    font-family: 'Oswald';
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0px 20px 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    height: auto;
+    position: relative;
+    left: -30px;
+}
+
+.infoWindow header img.no-pos{
+    padding:0;
+}
+
+.infoWindow header img:not(.no-pos){
+    position: relative;
+    top: -7px;
+    left: -25px;
+    height: 60px;
+    width: auto;
+    float: left;
+    margin: 0;
+}
+
+/* Bottom container of icons  */
+.bottomContainer{  
+    /* height: auto; */
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: auto;
+}
+ul.bottomRow{
+    /* border: 1px solid green; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
+}
+ul.bottomRow ul{
+    margin-top: 84px;
+}
+ul.bottomRow li{
+     display: inline-block;
+     /* border: 1px solid blue; */
+     margin: 2px 12px;
+     cursor: pointer;
+    }
+
+.footer{
+    position: absolute;
+    bottom:10px;
+    right: 90px;
+    height: 50px;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #626462;
+    /* border: 1px solid; */
+}
+
+
+/* 
+ * secondary menu grid hexagon used on details.html 
+ */
+
+.details a{
+    text-decoration: none;
+    font-size: 12px; 
+    color: #333;   
+}
+.details a:hover{
+    text-decoration: underline;
+}
+
+ .detailsContainer{
+    display: flex;
+    justify-content: flex-start;
+    min-height: 100%;
+    height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+    height: 100%;
+    /* margin: 0 auto 155px; the bottom margin is the negative value of the footer's height  */
+}
+
+.details header{
+    padding: 40px 0;
+}
+
+.details header h2{
+    font-size: 28px;
+    text-align: center;
+    font-family: 'Oswald';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #cd163f;
+    padding-bottom: 14px;
+    color: #6b6c6b;
+}
+
+.details-footer{
+    display:block;
+    clear:both;
+    font-size: 16px;
+    font-family: 'Oswald';
+    color: #6b6c6b;
+    text-transform: uppercase;
+    background: url(../img/ims-logo.png) no-repeat bottom left;
+    min-height: 62px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    margin-right: 18px;
+
+}
+
+/* Details sm-grid menu  */
+
+ul#sm-grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+
+
+ul.imsBanner li img{
+    width: 100%;
+    height: auto;
+}
+
+#sm-grid li{
+    cursor: pointer;
+}
+
+ul#sm-grid li img{
+    height: 90px;
+}
+
+/* 30% left of page rigid.  */
+.menuContainer{
+   border-right: 1px solid rgb(172, 170, 170); 
+   display: flex;
+   flex-direction: column;
+   flex: 0 0 20%;
+   overflow: auto;
+   height: auto;
+   padding: 20px;
+}
+.menuContainer > li{
+    flex: 1 1 auto;
+}
+
+.menuContainer .logo > img{
+    width:100%;
+    padding: 10px;
+}
+
+/* output status container */
+.statusContainer{
+    min-height: 150px;
+    padding: 20px 0;
+    font-family: 'Oswald';
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    color: #6b6c6b;
+    display: block;
+    clear: both;
+
+}
+/* Take up remaining space of page */
+.mainDisplayContainer{
+    flex: 1 1 auto;
+    padding: 0 40px;
+}
+
+/* demo  */
+
+/* .demo{ background: #e7e7e7; } */
+.main-timeline{
+    position: relative;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.main-timeline:before{
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #babcbb;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.main-timeline .timeline{
+    margin-bottom: 0;
+    position: relative;
+}
+.main-timeline .timeline:before,
+.main-timeline .timeline:after{
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+}
+.main-timeline .timeline-icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ededed;
+    overflow: hidden;
+    margin-left: -26px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    text-align: center;
+}
+.main-timeline .timeline-icon img{
+    height: 60px;
+}
+.main-timeline .timeline-content{
+    width: 41.85%;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    /* -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; */
+}
+.main-timeline .timeline-content:before{
+    content: "";
+    border-left: 7px solid #88888b;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    position: absolute;
+    left: 46%;
+    top: 20px;
+}
+.main-timeline .title{
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    padding: 20px;
+    background:#6b6c6b;
+    border-radius: 2px 2px 0 0;
+    margin: -20px -40px 10px;
+}
+.main-timeline .description{
+    /* font-family: 'QuicksandBook-Regular'; */
+    /* font-family: "BalooBhai-Regular"; */
+    font-family: "MyriadPro-Regular";
+    font-size: 18px;
+    color: #726f77;
+}
+.main-timeline .read-more{
+    display: inline-block;
+    font-size: 12px;
+    color: #babcbb;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border: 2px solid #babcbb;
+    position: relative;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 0 #babcbb;
+    -moz-box-shadow: 2px 2px 0 #babcbb;
+    -ms-box-shadow: 2px 2px 0 #babcbb;
+    box-shadow: 2px 2px 0 #babcbb;
+    margin-top: 10px;
+}
+.main-timeline .read-more:hover{
+    top: 2px;
+    left: 2px;
+    box-shadow: none;
+}
+
+.main-timeline ul.spLinks {
+    margin: 20px 0;
+}
+
+.main-timeline ul.spLinks li{
+    margin: 10px 0;
+}
+
+.main-timeline .timeline-content.right{
+    float: right;
+}
+.main-timeline .timeline-content.right:before{
+    content: "";
+    right: 46%;
+    left: inherit;
+    border-left: 0;
+    border-right: 7px solid #88888b;
+}
+@media only screen and (max-width: 990px){
+    .main-timeline .title{
+        font-size: 25px;
+    }
+    .main-timeline .timeline-content::before{
+        top: 16px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .main-timeline{ margin-left: 20px; }
+    .main-timeline:before{ left: 0; }
+    .main-timeline .timeline-content{
+        width: 90%;
+        float: right;
+    }
+    .main-timeline .timeline-content:before,
+    .main-timeline .timeline-content.right:before{
+        left: 10%;
+        right: inherit;
+        margin-left: -6px;
+        border-left: 0;
+        border-right: 7px solid #babcbb;
+    }
+    .main-timeline .timeline-icon{
+        left: 0;
+    }
+}
+@media only screen and (max-width: 479px){
+    .main-timeline .timeline-content{
+        width: 85%;
+    }
+    .main-timeline .timeline-content:before,
+    .main-timeline .timeline-content.right:before{
+        left: 15%;
+    }
+    .main-timeline .title{
+        font-size: 20px;
+    }
+    .main-timeline .timeline-content:before{
+        top: 13px;
+    }
+}
+
+/* Collapsible */
+
+input[type='checkbox'] {
+    display: none;
+  }
+
+  .lbl-toggle {
+    display: block;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+  }
+  
+  .lbl-toggle:hover::before {
+    /* color: #cd163f; */
+  }
+  .lbl-toggle::before {
+    content: ' ';
+    display: inline-block;
+  
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid currentColor;
+    vertical-align: middle;
+    margin-right: .7rem;
+    transform: translateY(-2px);
+  
+    transition: transform .5s ease-out;
+  }
+
+  .collapsible-content .content-inner {
+    border-bottom: 3px solid #4444445c;
+     border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 20px; 
+  }
+
+  .collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+  
+    transition: max-height .5s ease-in-out;
+  }
+  .toggle:checked + .lbl-toggle + .collapsible-content {
+    max-height: 350px;
+  }
+  .toggle:checked + .lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
+  }
+  
+  .toggle:checked + .lbl-toggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+/* ---------- Overlay for index.html ---------- */
+
+/* Hamburger menu for modal */
+span#hamburger{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: silver;
+}
+span#hamburger:hover{
+    color:#c7153d;
+}
+
+
+
+  /* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(248,246,246); /* milky white fallback color */
+    background-color: rgba(248, 246, 246, 0.9); /* milky white w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 45%;
+    margin: auto;
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 20px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+    font-family: 'Oswald';
+    text-transform: uppercase;
+  }
+  
+  .overlay a:before{
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: normal;
+    margin-right: 20px;
+  }
+
+  /* overlay menu link icons */
+  a#faq:before{  content: "\f059"; }
+  a#discuss:before{ content: "\f086";}
+  a#calendar:before{ content: "\f073";}
+  a#support:before{ content: "\f059"; }
+
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #c7153d;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }

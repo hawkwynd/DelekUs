@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>IMS v2</title>
+        <meta name="description" content="version 2 of IMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+      
+            <!-- JQuery and SPSServices libraries-->
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.SPServices/2014.02/jquery.SPServices-2014.02.min.js"></script>
+
+            <!-- fontawesome kit -->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+            <script src="https://kit.fontawesome.com/b684508b7c.js"></script>
+            <!-- Our jquery script -->
+            <script src="js/index.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+  <!-- The overlay -->
+  <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <a id="faq"       href="#">Frequently Asked Questions</a>
+          <a id="discuss"   href="#">Discussion Board</a>
+          <a id="calendar"  href="#">Calendar</a>
+        </div>
+      
+      </div>
+      
+      <!-- Use any element to open/show the overlay navigation menu -->
+      <span id="hamburger" onclick="openNav()"><i class="fas fa-bars fa-3x"></i></span>
+
+        <div class="mainContainer">
+           
+        <!-- top row icon container -->
+           <div class="topContainer">               
+                <ul class="topRow">
+                    <li id="cims"></li>                    
+                    <ul><li id="cpms"></li></ul>
+                    <li id="hrms"></li>
+                </ul>
+           </div> 
+        <!-- Middle row icon container  -->
+           <div class="midContainer">
+               <ul class="midRow">
+                   <li id="mms"></li>
+                   <li class="infoWindow">
+                       <header>
+                           <img class="no-pos" src="img/ims-header-logo.png">
+                       </header>
+                       <section>
+                        Delek Refining's Integrity Management Systems (IMS) will normalize excellence through creating a structured approach to every aspect of our business. Our core values will be embedded into each IMS element. IMS will instill discipline in our organization while developing our employees to his/her highest potential. A culture of continuous improvement will deliver the desired results.
+                        
+                       </section>
+                   </li>
+                   <li id="oems"></li>                  
+               </ul>
+           </div>
+        <!-- Bottom Row icon Container -->
+        <div class="bottomContainer">
+            <ul class="bottomRow">
+                <li id="ehssms">&nbsp;</li>
+                <ul><li id="rams"></li></ul>
+                <li id="bsms"></li>
+            </ul>
+          
+        </div>
+        <div class="footer">Copyright &copy; 2019 Delek US - All rights reserved.</div>
+
+    </div>
+        
+   
+      
+  
+
+
+
+    </body>
+</html>
