@@ -1,84 +1,68 @@
 $(document).ready(function(){
     // require('bootstrap');
 
+    var myElements = data['elements'];
+    var loop = 'even';
+
+     console.log(myElements);
+     
+    $.each(myElements, function(idx, group){
+    
+        loop = loop == 'odd' ? 'even' : 'odd';
+        var list = '';
+        var lor = loop == 'even' ? 'right' : '';
+
+        $.each(group['files'], function(i, file){
+            list += '<li>' +
+            '<div class="file-icon file-icon-lg" data-type="'+ file['type'] +
+            '" data-size="'+ file['size'] +'" data-author="' + file['author'] + '">' +'</div>' +
+            file['filename'] + ' (' + file['size'] + ') </li>'
+        });
+
+
+        populate(group, list, lor);
+
+    });
+
+    
+   
+function populate(data, files, lor){
+    $('.main-timeline').append(
+        '<div class="timeline">' + 
+        '<div class="timeline-icon"><img src="img/ehssms-active.png"></div>'+
+        '<div class="timeline-content ' + lor + '">'+
+        '<div class="wrap-collabsible">'+
+                '<input id="'+data['id']+'" class="toggle" type="checkbox">'+
+                '<label for="'+data['id']+'" class="lbl-toggle title">'+
+                data['title']+
+                '</label>'+
+                '<div class="collapsible-content">'+
+                '<div class="content-inner">'+
+                '<p class="description">'+
+                data['description'] +
+                '</p>'+
+                '<ul class="spLinks">'+ files +
+                '</ul>' +
+                '</div> </div> </div></div>'
+    );
+}
+    
+
+
     var request = getUrlVars();  
 
-    // Initialize the elements containers to listen for hovers, clicks 
-    var elements = [
-        $('#ehssms'), 
-        $('#rams'), 
-        $('#oems'),
-        $('#mms'),
-        $('#cpms'),
-        $('#bsms'),
-        $('#hrms'),
-        $('#cims')
+   // Initialize the elements containers to listen for hovers, clicks 
+ var elements = [
+    $('#ehssms'), 
+    $('#rams'), 
+    $('#oems'),
+    $('#mms'),
+    $('#cpms'),
+    $('#bsms'),
+    $('#hrms'),
+    $('#cims')
 ];
-    // Hover display content for each element's relative position
-    var contents = {
-        ehssms : 
-            {
-                contents: 'Continuous improvement in health and safety, process safety, environmental responsibility and security.',
-                title: 'Environmental, Health, Safety & Security Management System',
-                href: 'ehssms',
-                icon: 'fa fa-leaf'
-            },
-        rams : 
-            {
-                contents: 'The capability of our equipment assets, monitor operation integrity within that capability, and optimize equipment efficiently.',
-                title: 'Reliability Asset Management System',
-                href: 'rams',
-                icon: 'fa fa-cog'
-        },
-
-        oems : 
-            {
-                contents: 'Doing things the right way means our Company takes care of our people, our assets, the environment and our customers.',
-                title: 'Operations Excellence Management System',
-                href: 'oems',
-                icon: 'fa fa-hard-hat'
-        },
-
-        mms :
-            {
-                contents: 'An integrated framework of elements to manage all aspects of refinery planning, scheduling, monitoring, and optimization.',
-                title: 'Molecule Management System',
-                href: 'mms',
-                icon: 'fa fa-dna'
-        },
-
-        cpms : 
-            {
-                contents: 'Measurable value and predictable results in Delek’s portfolio management and project delivery.',
-                title: 'Capital Projects Management System',
-                href: 'cpms',
-                icon: 'fa fa-tools'
-        },
-
-        bsms: 
-            {
-                contents: 'A set of work processes focused on development, delivery, and stewardship of strategic and tactical objectives.',
-                title: 'Business Strategy Management System',
-                href: 'bsms',
-                icon: 'fas fa-chess-knight'
-        },
-
-        hrms: 
-            {
-                contents: 'Management of human capital through critical activities that occur during the employee hire to retire life cycle.',
-                title: 'Human Resources Management System',
-                href: 'hrms',
-                icon: 'fa fa-user-friends'
-        },
-
-        cims: 
-            {
-                contents: 'Essential principles and concepts that drive business controls. Created in a way that measures control risks.',
-                title: 'Control Integrity Management System',
-                href: 'cims',
-                icon: 'fa fa-search'
-        }
-    }
+    
 // Process request info
 
 var a_request = contents[request['el']];
