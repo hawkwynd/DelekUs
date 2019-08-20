@@ -15,11 +15,14 @@ $(document).ready(function(){
         $.each(group['files'], function(i, file){
             list += '<li>' +
             '<div class="file-icon file-icon-lg" data-type="'+ file['type'] +
-            '" data-size="'+ file['size'] +'" data-author="' + file['author'] + '">' +'</div>' +
+            '" data-size="'+ file['size'] +'" data-author="' + file['author'] + '" '+ 
+            '" data-filename="' + file['filename'] + '" ' +
+            '" data-modified="' + file['modified'] + '" ' +
+            '>' +'</div>' +
             file['filename'] + ' (' + file['size'] + ') </li>'
         });
 
-
+        // update timeline content
         populate(group, list, lor);
 
     });
@@ -33,23 +36,16 @@ function populate(data, files, lor){
         '<div class="timeline-content ' + lor + '">'+
         '<div class="wrap-collabsible">'+
                 '<input id="'+data['id']+'" class="toggle" type="checkbox">'+
-                '<label for="'+data['id']+'" class="lbl-toggle title">'+
-                data['title']+
-                '</label>'+
+                '<label for="'+data['id']+'" class="lbl-toggle title">'+ data['title'] + '</label>'+
                 '<div class="collapsible-content">'+
                 '<div class="content-inner">'+
-                '<p class="description">'+
-                data['description'] +
-                '</p>'+
-                '<ul class="spLinks">'+ files +
-                '</ul>' +
-                '</div> </div> </div></div>'
+                '<p class="description">'+ data['description'] + '</p>' +
+                '<ul class="spLinks">'+ files + '</ul>' +
+                '</div></div></div></div>'
     );
 }
-    
 
-
-    var request = getUrlVars();  
+var request = getUrlVars();  
 
    // Initialize the elements containers to listen for hovers, clicks 
  var elements = [
@@ -113,9 +109,13 @@ loadMenuIcons(contents, el_href);
 $('.timeline-icon').html('<img src="img/' + el_href + '-active.png">');
 
 // Display status
-
 $('.statusContainer').html(contents[el_href]['title']);
-    
+ 
+// all pdf files red
+$('.file-icon[data-author="Scott Fleming"]').closest('li').css('text-transform','uppercase');
+
+
+
 
 
 });
